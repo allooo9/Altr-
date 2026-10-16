@@ -92,10 +92,26 @@ nav ul a:hover{opacity:1}
 @keyframes fade{from{opacity:0;transform:translateY(12px)}}
 .grp{break-inside:avoid;margin-bottom:2.6rem}
 .grp h4{font:italic 400 1.7rem var(--serif);color:var(--brick);padding-bottom:.4rem;border-bottom:1px solid var(--ink)}
-.dish{display:flex;gap:.8rem;align-items:baseline;padding:.95rem 0;border-bottom:1px solid rgba(28,13,18,.15);transition:background .25s ease;border-radius:4px}
-.dish:hover{background:rgba(201,163,95,0.12)}
-.dish .nm{flex:0 1 auto;min-width:0;padding:0 0.3rem;}
+.dish{display:flex;gap:.8rem;align-items:baseline;padding:.95rem 0;border-bottom:1px solid rgba(28,13,18,.15);transition:background .25s ease, padding-left .25s ease;border-radius:4px}
+.dish:hover{background:rgba(201,163,95,0.12);padding-left:0.5rem;padding-right:0.5rem}
+.dish .nm{flex:0 1 auto;min-width:0}
 .dish h3{font-size:1.2rem;font-weight:400;line-height:1.3}
+
+/* Correzione specifica per i titoli fissi nel menu "La Carta" per evitare reflow in hover */
+#a .dish:nth-child(2) h3,
+#a .dish:nth-child(3) h3,
+#a .dish:nth-child(2) .nm h3,
+#a .dish:nth-child(4) h3 {
+  font-size: 1.15rem;
+}
+#a .grp .dish h3 {
+  transition: transform 0.25s ease;
+  transform-origin: left center;
+}
+#a .grp .dish:hover h3 {
+  transform: scale(1.015);
+}
+
 .dish .sub{font-size:.88rem;line-height:1.45;color:#6b5a52;margin-top:.2rem}
 .dish i{flex:1;border-bottom:1px dotted rgba(28,13,18,.4);min-width:14px;transform:translateY(-.25em)}
 .dish b{font:500 1.25rem var(--serif);color:var(--brick);white-space:nowrap;flex:none}
