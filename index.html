@@ -92,9 +92,9 @@ nav ul a:hover{opacity:1}
 @keyframes fade{from{opacity:0;transform:translateY(12px)}}
 .grp{break-inside:avoid;margin-bottom:2.6rem}
 .grp h4{font:italic 400 1.7rem var(--serif);color:var(--brick);padding-bottom:.4rem;border-bottom:1px solid var(--ink)}
-.dish{display:flex;gap:.8rem;align-items:baseline;padding:.95rem 0;border-bottom:1px solid rgba(28,13,18,.15);transition:background .25s ease, padding-left .25s ease;border-radius:4px}
-.dish:hover{background:rgba(201,163,95,0.12);padding-left:0.5rem;padding-right:0.5rem}
-.dish .nm{flex:0 1 auto;min-width:0}
+.dish{display:flex;gap:.8rem;align-items:baseline;padding:.95rem 0;border-bottom:1px solid rgba(28,13,18,.15);transition:background .25s ease;border-radius:4px}
+.dish:hover{background:rgba(201,163,95,0.12)}
+.dish .nm{flex:0 1 auto;min-width:0;padding:0 0.3rem;}
 .dish h3{font-size:1.2rem;font-weight:400;line-height:1.3}
 .dish .sub{font-size:.88rem;line-height:1.45;color:#6b5a52;margin-top:.2rem}
 .dish i{flex:1;border-bottom:1px dotted rgba(28,13,18,.4);min-width:14px;transform:translateY(-.25em)}
@@ -379,8 +379,6 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
       <div>V. Vegetariano</div>
     </div>
   </div>
-
-  <p class="note" data-i18n="menu-footer">Prezzi in euro. Per allergie o intolleranze, avvisa il personale.</p>
 </div></section>
 
 <!-- SEZIONE ORARI & INFO -->
@@ -436,7 +434,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
     <article class="q r"><p data-i18n="q3">Spaghetti alle vongole deliziosi, polpo con crema di ceci e un gelato artigianale strepitoso.</p><footer><span>Merinù G.</span><b>10</b></footer></article>
     <article class="q r"><p data-i18n="q4">Siamo tornati per la quinta volta. Tutti i piatti ottimi come sempre.</p><footer><span>Lorella A.</span><b>10</b></footer></article>
     <article class="q r"><p data-i18n="q5">Altrè, una certezza di cucina bergamasca.</p><footer><span>Marcello P.</span><b>9,0</b></footer></article>
-    <article class="q r"><p data-i18n="q6">Sono stato sentito qui per il mio anniversario. Cibo ottimo, servizio eccellente, camerieri simpaticissimi.</p><footer><span>Luca I.</span><b>10</b></footer></article>
+    <article class="q r"><p data-i18n="q6">Sono stato qui per il mio anniversario. Cibo ottimo, servizio eccellente, camerieri simpaticissimi.</p><footer><span>Luca I.</span><b>10</b></footer></article>
   </div>
   <p class="ai r" data-i18n="rev-ai">In sintesi, i clienti descrivono un'atmosfera intima e raffinata, perfetta per una cena romantica, con una cucina di altissimo livello e uno staff accogliente e attento.</p>
 </div></section>
@@ -526,7 +524,6 @@ const translations = {
     "cat-sat-sp": "Secondi di pesce",
     "all-title": "Allergeni",
     "all-desc": "Gentile ospite, se avessi delle allergie e/o intolleranze alimentari, chiedi al nostro personale che provvederà a fornirti adeguate informazioni sui nostri cibi e bevande.<br><em>* In mancanza di reperimento del prodotto fresco, l'alimento potrebbe essere surgelato / abbattuto.</em>",
-    "menu-footer": "Prezzi in euro. Per allergie o intolleranze, avvisa il personale.",
     "orari-title": "Orari & Informazioni",
     "orari-subtitle": "APERTO PER PRANZO E CENA DA LUNEDI A SABATO",
     "orari-p1": "Il locale è aperto da lunedì a giovedì: dalle ore 7.00 alle ore 20.00<br>venerdì e sabato dalle ore 19.00 alle ore 23.00",
@@ -612,7 +609,6 @@ const translations = {
     "cat-sat-sp": "Seafood Main Courses",
     "all-title": "Allergens",
     "all-desc": "Dear guest, if you have any food allergies and/or intolerances, please ask our staff who will provide you with adequate information about our food and beverages.<br><em>* If fresh product is unavailable, the food may be frozen/blast-chilled.</em>",
-    "menu-footer": "Prices in Euros. Please inform staff of any allergies or intolerances.",
     "orari-title": "Hours & Information",
     "orari-subtitle": "OPEN FOR LUNCH AND DINNER FROM MONDAY TO SATURDAY",
     "orari-p1": "The venue is open from Monday to Thursday: from 7.00 AM to 8.00 PM<br>Friday and Saturday from 7.00 PM to 11.00 PM",
