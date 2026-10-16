@@ -34,7 +34,7 @@ nav.s{background:rgba(42,15,25,.82);backdrop-filter:blur(14px)}
 nav.s .wrap{padding:.8rem 0}
 .logo{font:500 1.7rem var(--serif);text-decoration:none}
 .logo span { display: inline-block; position: relative; }
-.logo span.accented::after { content: "́"; position: absolute; top: -0.15em; left: 50%; transform: translateX(-50%); font-size: 0.85em; font-weight: 300; }
+.logo span.accented-e::after { content: "́"; position: absolute; top: -0.15em; left: 50%; transform: translateX(-50%); font-size: 0.85em; font-weight: 300; }
 nav ul{display:flex;gap:1.8rem;list-style:none;padding:0;align-items:center}
 nav ul a{text-decoration:none;font-size:.92rem;opacity:.8;transition:opacity .3s}
 nav ul a:hover{opacity:1}
@@ -60,7 +60,7 @@ nav ul a:hover{opacity:1}
 .hero .wrap{position:relative;z-index:2}
 .hero h1{font-size:clamp(5rem,20vw,17rem);line-height:.82;font-weight:300;margin-left:-.04em}
 .hero h1 span{display:inline-block;opacity:0;transform:translateY(40%);animation:up 1.2s var(--ease) forwards;position:relative}
-.hero h1 span.accented::after{content:"́";position:absolute;top:-0.1em;left:50%;transform:translateX(-50%);font-size:0.6em;font-weight:300}
+.hero h1 span.accented-e::after{content:"́";position:absolute;top:-0.1em;left:50%;transform:translateX(-50%);font-size:0.6em;font-weight:300}
 .hero h1 span:nth-child(2){animation-delay:.1s}.hero h1 span:nth-child(3){animation-delay:.2s}
 .chapters{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;margin:2rem 0 2.2rem;font:italic 300 clamp(1.3rem,3vw,2rem) var(--serif);color:var(--brass);opacity:0;animation:up 1.2s .5s var(--ease) forwards}
 .hero .row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;opacity:0;animation:up 1.2s .7s var(--ease) forwards}
@@ -160,7 +160,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
 <body>
 
 <nav id="nav"><div class="wrap">
-  <a class="logo" href="#top">Alt<span class="accented">r</span>è</a>
+  <a class="logo" href="#top">Altr<span class="accented-e">e</span></a>
   <button class="menu-toggle" aria-label="Apri menu">☰</button>
   <ul id="nav-list">
     <li><a href="#storia" data-i18n="nav-locale">Il locale</a></li>
@@ -182,7 +182,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
 <header class="hero" id="top">
   <img class="bg" id="heroimg" alt="" src="https://cdn.thefork.com/tf-lab/image/upload/w_1600,c_fill,q_auto,f_auto/restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/8d728171-98ca-4c4b-88b6-11f99716d509.jpg" onerror="this.remove()">
   <div class="wrap">
-    <h1 aria-label="Altrè"><span>Al</span><span class="accented">t</span><span>rè</span></h1>
+    <h1 aria-label="Altrè"><span>Al</span><span>tr</span><span class="accented-e">e</span></h1>
     <p class="chapters"><span data-i18n="hero-caffe">Caffè</span><span data-i18n="hero-cucina">Cucina</span><span data-i18n="hero-cantina">Cantina</span></p>
     <div class="row">
       <a class="btn solid" href="#menu" data-i18n="btn-menu">Scopri il menu</a>
@@ -571,7 +571,6 @@ function setLang(lang) {
     }
   });
 
-  // Aggiorna bottoni attivi desktop e mobile
   document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
   if(lang === 'it') {
     document.getElementById('btn-it').classList.add('active');
@@ -583,7 +582,6 @@ function setLang(lang) {
   document.documentElement.setAttribute('lang', lang);
 }
 
-// Inserisce il selettore di lingua desktop in alto a destra dopo "Dove siamo"
 const desktopLangWrapper = document.getElementById('desktop-lang-wrapper');
 desktopLangWrapper.innerHTML = `
   <div class="lang-switch" style="display:flex">
@@ -594,11 +592,10 @@ desktopLangWrapper.innerHTML = `
 desktopLangWrapper.style.display = 'flex';
 
 
-// --- GALLERIA (Rimossa la prima foto come richiesto) ---
+// --- GALLERIA ---
 const B='https://cdn.thefork.com/tf-lab/image/upload/';
 const R='restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/', C='customer/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/';
 const photos=[
-  // Rimossa [R+'0fec47d8-9750-4f79-91b7-2bf11ce40f73','Frittura di pesce croccante']
   [R+'8d728171-98ca-4c4b-88b6-11f99716d509','La sala con pareti in mattoni'],
   [C+'2b7e2184-2074-4067-9478-440502516028','Polpo grigliato su purè di verdure'],
   [R+'9cf214c7-ed95-4f8e-8db6-8d246557d9c4','Vetrine con vini e salumi'],
