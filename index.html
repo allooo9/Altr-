@@ -100,6 +100,9 @@ nav ul a:hover{opacity:1}
 .dish i{flex:1;border-bottom:1px dotted rgba(28,13,18,.4);min-width:14px;transform:translateY(-.25em)}
 .dish b{font:500 1.25rem var(--serif);color:var(--brick);white-space:nowrap;flex:none}
 .note{margin-top:1.5rem;font-size:.9rem;color:#6b5a52}
+.allergens-box{margin-top:2.5rem;padding:1.5rem;background:rgba(28,13,18,.05);border-radius:6px;font-size:.85rem;color:#6b5a52;border-left:3px solid var(--brick)}
+.allergens-box h4{font:600 1rem var(--sans);color:var(--brick);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+.allergens-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:.4rem 1rem;margin-top:.8rem}
 
 /* Degustazione Menu Style: Single column full width on desktop */
 #d .cols {
@@ -165,6 +168,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
   <ul id="nav-list">
     <li><a href="#storia" data-i18n="nav-locale">Il locale</a></li>
     <li><a href="#menu" data-i18n="nav-menu">Menu</a></li>
+    <li><a href="#orari" data-i18n="nav-orari">Orari & Info</a></li>
     <li><a href="#foto" data-i18n="nav-foto">Foto</a></li>
     <li><a href="#recensioni" data-i18n="nav-recensioni">Recensioni</a></li>
     <li><a href="#contatti" data-i18n="nav-contatti">Dove siamo</a></li>
@@ -353,7 +357,62 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
       <div class="dish"><div class="nm"><h3 data-i18n="ssp4">Fritto misto di pesce</h3></div><i></i><b>28€</b></div>
     </div>
   </div>
+
+  <div class="allergens-box">
+    <h4 data-i18n="all-title">Allergeni</h4>
+    <p data-i18n="all-desc">Gentile ospite, se avessi delle allergie e/o intolleranze alimentari, chiedi al nostro personale che provvederà a fornirti adeguate informazioni sui nostri cibi e bevande.<br><em>* In mancanza di reperimento del prodotto fresco, l'alimento potrebbe essere surgelato / abbattuto.</em></p>
+    <div class="allergens-grid">
+      <div>1. Glutine</div>
+      <div>2. Crostacei</div>
+      <div>3. Uova e derivati</div>
+      <div>4. Pesce</div>
+      <div>5. Arachidi e derivati</div>
+      <div>6. Soia</div>
+      <div>7. Latte e derivati</div>
+      <div>8. Frutta a guscio</div>
+      <div>9. Sedano</div>
+      <div>10. Senape</div>
+      <div>11. Sesamo</div>
+      <div>12. Solfiti</div>
+      <div>13. Lupini</div>
+      <div>14. Molluschi</div>
+      <div>V. Vegetariano</div>
+    </div>
+  </div>
+
   <p class="note" data-i18n="menu-footer">Prezzi in euro. Per allergie o intolleranze, avvisa il personale.</p>
+</div></section>
+
+<!-- SEZIONE ORARI & INFO -->
+<section class="rev" id="orari"><div class="wrap">
+  <div class="r" style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 data-i18n="orari-title" style="margin-bottom: 1.5rem;">Orari & Informazioni</h2>
+    <p class="lead" style="margin: 0 auto 2rem; color: var(--paper);" data-i18n="orari-subtitle"><b>APERTO PER PRANZO E CENA DA LUNEDI A SABATO</b></p>
+    
+    <div style="background: rgba(0,0,0,.2); padding: 2rem; border-radius: 8px; border: 1px solid rgba(243,235,223,.15); text-align: left; margin-bottom: 2rem;">
+      <p style="margin-bottom: 1rem; text-align: center;" data-i18n="orari-p1">Il locale è aperto da lunedì a giovedì: dalle ore 7.00 alle ore 20.00<br>venerdì e sabato dalle ore 19.00 alle ore 23.00</p>
+      
+      <ul style="list-style: none; padding: 0; display: grid; gap: .6rem; text-align: center; margin: 1.5rem 0; font-size: 1.05rem;">
+        <li><strong style="color: var(--brass);" data-i18n="orari-col">Colazione:</strong> dalle ore 7.00 alle ore 12.00</li>
+        <li><strong style="color: var(--brass);" data-i18n="orari-pranzo">Pranzo:</strong> dalle ore 12.00 alle ore 15.00</li>
+        <li><strong style="color: var(--brass);" data-i18n="orari-hh">Happy hour:</strong> dalle ore 15.00 alle ore 20.00</li>
+      </ul>
+      
+      <p style="text-align: center; margin-top: 1.5rem;" data-i18n="orari-buffet">È possibile ovviamente avere un buffet tutte le sere prenotabile al <a href="tel:3518822563" style="color: var(--brass); text-decoration: none; font-weight: 600;">3518822563</a></p>
+    </div>
+
+    <div style="background: rgba(0,0,0,.2); padding: 2rem; border-radius: 8px; border: 1px solid rgba(243,235,223,.15); text-align: left;">
+      <h3 style="color: var(--brass); font-size: 1.4rem; margin-bottom: 1rem; text-align: center;" data-i18n="orari-rist-title">CENA RISTORANTE ALTRÈ MILANO:</h3>
+      <p style="margin-bottom: .8rem; text-align: center;" data-i18n="orari-rist-p1">Tutte le sere cena alla carta con possibilità di menu fissi guidati per gruppi da almeno 15 persone.</p>
+      <p style="margin-bottom: 1.2rem; text-align: center;" data-i18n="orari-rist-p2">Il menu comprende già antipasto, primo, secondo e dessert con acqua e caffè.</p>
+      
+      <!-- Feste ed Eventi -->
+      <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(243,235,223,.15); text-align: center;">
+        <p style="margin-bottom: .8rem; font-weight: 500;" data-i18n="orari-parties">Ideale per feste di compleanno, feste di addio al celibato/nubilato, feste di laurea ed eventi aziendali.</p>
+        <p style="font-size: 1.1rem;"><strong data-i18n="orari-info-pren">Info e Prenotazioni al </strong><a href="tel:393518822563" style="color: var(--brass); text-decoration: none; font-weight: 600;">+39 3518822563</a></p>
+      </div>
+    </div>
+  </div>
 </div></section>
 
 <section id="foto" style="padding-left:0;padding-right:0">
@@ -377,7 +436,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
     <article class="q r"><p data-i18n="q3">Spaghetti alle vongole deliziosi, polpo con crema di ceci e un gelato artigianale strepitoso.</p><footer><span>Merinù G.</span><b>10</b></footer></article>
     <article class="q r"><p data-i18n="q4">Siamo tornati per la quinta volta. Tutti i piatti ottimi come sempre.</p><footer><span>Lorella A.</span><b>10</b></footer></article>
     <article class="q r"><p data-i18n="q5">Altrè, una certezza di cucina bergamasca.</p><footer><span>Marcello P.</span><b>9,0</b></footer></article>
-    <article class="q r"><p data-i18n="q6">Sono stato qui per il mio anniversario. Cibo ottimo, servizio eccellente, camerieri simpaticissimi.</p><footer><span>Luca I.</span><b>10</b></footer></article>
+    <article class="q r"><p data-i18n="q6">Sono stato sentito qui per il mio anniversario. Cibo ottimo, servizio eccellente, camerieri simpaticissimi.</p><footer><span>Luca I.</span><b>10</b></footer></article>
   </div>
   <p class="ai r" data-i18n="rev-ai">In sintesi, i clienti descrivono un'atmosfera intima e raffinata, perfetta per una cena romantica, con una cucina di altissimo livello e uno staff accogliente e attento.</p>
 </div></section>
@@ -420,6 +479,7 @@ const translations = {
   it: {
     "nav-locale": "Il locale",
     "nav-menu": "Menu",
+    "nav-orari": "Orari & Info",
     "nav-foto": "Foto",
     "nav-recensioni": "Recensioni",
     "nav-contatti": "Dove siamo",
@@ -464,7 +524,21 @@ const translations = {
     "cat-sat-ap": "Antipasti di pesce",
     "cat-sat-pp": "Primi di pesce",
     "cat-sat-sp": "Secondi di pesce",
+    "all-title": "Allergeni",
+    "all-desc": "Gentile ospite, se avessi delle allergie e/o intolleranze alimentari, chiedi al nostro personale che provvederà a fornirti adeguate informazioni sui nostri cibi e bevande.<br><em>* In mancanza di reperimento del prodotto fresco, l'alimento potrebbe essere surgelato / abbattuto.</em>",
     "menu-footer": "Prezzi in euro. Per allergie o intolleranze, avvisa il personale.",
+    "orari-title": "Orari & Informazioni",
+    "orari-subtitle": "APERTO PER PRANZO E CENA DA LUNEDI A SABATO",
+    "orari-p1": "Il locale è aperto da lunedì a giovedì: dalle ore 7.00 alle ore 20.00<br>venerdì e sabato dalle ore 19.00 alle ore 23.00",
+    "orari-col": "Colazione:",
+    "orari-pranzo": "Pranzo:",
+    "orari-hh": "Happy hour:",
+    "orari-buffet": "È possibile ovviamente avere un buffet tutte le sere prenotabile al 3518822563",
+    "orari-rist-title": "CENA RISTORANTE ALTRÈ MILANO:",
+    "orari-rist-p1": "Tutte le sere cena alla carta con possibilità di menu fissi guidati per gruppi da almeno 15 persone.",
+    "orari-rist-p2": "Il menu comprende già antipasto, primo, secondo e dessert con acqua e caffè.",
+    "orari-parties": "Ideale per feste di compleanno, feste di addio al celibato/nubilato, feste di laurea ed eventi aziendali.",
+    "orari-info-pren": "Info e Prenotazioni al ",
     "gal-title": "Uno sguardo dentro",
     "gal-lead": "Scorri e tocca una foto per ingrandirla.",
     "rev-cibo": "Cibo",
@@ -491,6 +565,7 @@ const translations = {
   en: {
     "nav-locale": "The Place",
     "nav-menu": "Menu",
+    "nav-orari": "Hours & Info",
     "nav-foto": "Gallery",
     "nav-recensioni": "Reviews",
     "nav-contatti": "Location",
@@ -535,7 +610,21 @@ const translations = {
     "cat-sat-ap": "Seafood Starters",
     "cat-sat-pp": "Seafood First Courses",
     "cat-sat-sp": "Seafood Main Courses",
+    "all-title": "Allergens",
+    "all-desc": "Dear guest, if you have any food allergies and/or intolerances, please ask our staff who will provide you with adequate information about our food and beverages.<br><em>* If fresh product is unavailable, the food may be frozen/blast-chilled.</em>",
     "menu-footer": "Prices in Euros. Please inform staff of any allergies or intolerances.",
+    "orari-title": "Hours & Information",
+    "orari-subtitle": "OPEN FOR LUNCH AND DINNER FROM MONDAY TO SATURDAY",
+    "orari-p1": "The venue is open from Monday to Thursday: from 7.00 AM to 8.00 PM<br>Friday and Saturday from 7.00 PM to 11.00 PM",
+    "orari-col": "Breakfast:",
+    "orari-pranzo": "Lunch:",
+    "orari-hh": "Happy hour:",
+    "orari-buffet": "It is of course possible to have a buffet every evening by booking at 3518822563",
+    "orari-rist-title": "ALTRÈ MILANO RESTAURANT DINNER:",
+    "orari-rist-p1": "A la carte dinner every evening with the possibility of guided fixed menus for groups of at least 15 people.",
+    "orari-rist-p2": "The menu already includes starter, first course, main course and dessert with water and coffee.",
+    "orari-parties": "Ideal for birthday parties, bachelorette/bachelor parties, graduation parties and corporate events.",
+    "orari-info-pren": "Info and Bookings at ",
     "gal-title": "A Look Inside",
     "gal-lead": "Scroll and tap a photo to enlarge.",
     "rev-cibo": "Food",
@@ -567,7 +656,7 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      el.innerHTML = translations[lang][key];
     }
   });
 
