@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altrè — Caffè, Cucina, Cantina · Milano</title>
+<meta name="description" content="Altrè, Via Gustavo Modena 3, Milano. Cucina bergamasca, cantina e caffè a due passi da Porta Venezia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#2a0f19;--wine2:#3b1824;--brick:#7a2e2a;--brass:#c9a35f;--paper:#f3ebdf;--ink:#1c0d12;--mute:#b9a89b;
+--serif:'Fraunces',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--wine);color:var(--paper);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{width:min(1180px,90vw);margin:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:1.2rem}
+section{padding:clamp(5rem,12vw,9rem) 0}
+.lead{max-width:56ch;color:var(--mute)}
+.btn{display:inline-block;padding:.95rem 1.7rem;border:1px solid var(--brass);border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease)}
+.btn:hover{background:var(--brass);color:var(--ink);transform:translateY(-2px)}
+.btn.solid{background:var(--brass);color:var(--ink)}
+.btn.solid:hover{background:var(--paper);border-color:var(--paper)}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,backdrop-filter .5s,padding .5s}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;transition:padding .5s}
+nav.s{background:rgba(42,15,25,.82);backdrop-filter:blur(14px)}
+nav.s .wrap{padding:.8rem 0}
+.logo{font:500 1.7rem var(--serif);text-decoration:none}
+nav ul{display:flex;gap:2rem;list-style:none;padding:0}
+nav ul a{text-decoration:none;font-size:.92rem;opacity:.8;transition:opacity .3s}
+nav ul a:hover{opacity:1}
+@media(max-width:760px){nav ul{gap:1rem}nav li:nth-child(n+4):not(:last-child){display:none}}
+
+/* hero */
+.hero{min-height:100svh;position:relative;display:grid;align-items:end;padding:0 0 clamp(2.5rem,7vw,5rem);background:linear-gradient(160deg,var(--brick),var(--wine) 70%);overflow:hidden}
+.hero .bg{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;opacity:.55;will-change:transform}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--wine) 4%,rgba(42,15,25,.15) 55%,rgba(42,15,25,.6))}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(6rem,24vw,19rem);line-height:.82;font-weight:300;margin-left:-.04em}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40%);animation:up 1.2s var(--ease) forwards}
+.hero h1 span:nth-child(2){animation-delay:.1s}.hero h1 span:nth-child(3){animation-delay:.2s}
+.chapters{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;margin:2rem 0 2.2rem;font:italic 300 clamp(1.3rem,3vw,2rem) var(--serif);color:var(--brass);opacity:0;animation:up 1.2s .5s var(--ease) forwards}
+.hero .row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;opacity:0;animation:up 1.2s .7s var(--ease) forwards}
+.hero .addr{color:var(--mute);font-size:.95rem;margin-left:.5rem}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* intro */
+.intro .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.intro .photo{aspect-ratio:4/5;border-radius:220px 220px 6px 6px;overflow:hidden;background:var(--wine2)}
+.intro .photo img{width:100%;height:100%;object-fit:cover}
+.stats{display:flex;flex-wrap:wrap;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(201,163,95,.3)}
+.stats b{display:block;font:300 2.6rem/1 var(--serif);color:var(--brass)}
+.stats small{color:var(--mute);font-size:.85rem}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
+.tags span{padding:.35rem .9rem;border:1px solid rgba(243,235,223,.2);border-radius:99px;font-size:.85rem;color:var(--mute)}
+@media(max-width:820px){.intro .grid{grid-template-columns:1fr}.intro .photo{max-width:420px}}
+
+/* menu */
+.menu{background:var(--paper);color:var(--ink)}
+.menu .lead{color:#6b5a52}
+.tabs{display:flex;gap:.5rem;margin:2.5rem 0 1rem;flex-wrap:wrap}
+.tabs button{font:600 .92rem var(--sans);padding:.7rem 1.3rem;border-radius:99px;border:1px solid rgba(28,13,18,.25);background:none;color:inherit;cursor:pointer;transition:all .35s var(--ease)}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.panel{display:none;animation:fade .6s var(--ease)}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+.dish{display:flex;gap:1rem;align-items:baseline;padding:1.5rem 0;border-bottom:1px solid rgba(28,13,18,.15)}
+.dish h3{font-size:1.5rem;font-weight:400;flex:0 1 auto;max-width:42ch}
+.dish i{flex:1;border-bottom:1px dotted rgba(28,13,18,.4);transform:translateY(-.3em);min-width:20px}
+.dish b{font:500 1.5rem var(--serif);color:var(--brick)}
+.note{margin-top:1.5rem;font-size:.9rem;color:#6b5a52}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.menu-photos{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.menu-photos div{aspect-ratio:3/4;border-radius:6px;overflow:hidden;background:#d9cbb9}
+.menu-photos div:nth-child(2){transform:translateY(2rem)}
+.menu-photos img{width:100%;height:100%;object-fit:cover}
+.cited li{padding:.9rem 0;border-bottom:1px solid rgba(28,13,18,.15);font:400 1.3rem var(--serif);list-style:none}
+@media(max-width:820px){.menu-grid{grid-template-columns:1fr}.dish{flex-wrap:wrap}.dish i{display:none}.dish b{margin-left:auto}}
+
+/* gallery */
+.gal-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+.rail{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 5vw 1.5rem;scrollbar-width:thin;scrollbar-color:var(--brass) transparent}
+.rail button{flex:0 0 clamp(240px,30vw,400px);aspect-ratio:3/4;border:0;padding:0;border-radius:6px;overflow:hidden;scroll-snap-align:center;cursor:zoom-in;background:var(--wine2);position:relative}
+.rail button:nth-child(even){margin-top:3rem;aspect-ratio:4/5}
+.rail img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.rail button:hover img{transform:scale(1.06)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(20,6,12,.94);display:none;place-items:center;padding:4vw;cursor:zoom-out}
+.lb.on{display:grid;animation:fade .4s}
+.lb img{max-height:88vh;border-radius:4px}
+
+/* reviews */
+.rev{background:var(--wine2)}
+.score{display:flex;flex-wrap:wrap;align-items:end;gap:2rem 4rem;margin-bottom:3rem}
+.score .big{font:300 clamp(5rem,12vw,9rem)/.85 var(--serif);color:var(--brass)}
+.score .big small{font-size:.3em;color:var(--mute)}
+.bars{display:grid;gap:.7rem;min-width:260px}
+.bar{display:grid;grid-template-columns:90px 1fr 36px;gap:.8rem;align-items:center;font-size:.9rem}
+.bar span{height:3px;background:rgba(243,235,223,.15);position:relative;border-radius:3px}
+.bar span::after{content:"";position:absolute;inset:0;width:var(--v);background:var(--brass);border-radius:3px;transform-origin:left;transform:scaleX(0);transition:transform 1.6s var(--ease)}
+.in .bar span::after{transform:scaleX(1)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.q{padding:1.8rem;border:1px solid rgba(243,235,223,.12);border-radius:6px;transition:border-color .4s,transform .4s var(--ease)}
+.q:hover{border-color:var(--brass);transform:translateY(-4px)}
+.q p{font:300 1.25rem/1.45 var(--serif);margin-bottom:1.2rem}
+.q footer{font-size:.85rem;color:var(--mute);display:flex;justify-content:space-between}
+.q footer b{color:var(--brass)}
+.ai{margin-top:3rem;padding:1.8rem;background:rgba(0,0,0,.18);border-left:2px solid var(--brass);max-width:70ch;color:var(--mute);font-size:.95rem}
+
+/* location */
+.loc .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,5rem)}
+.map{min-height:440px;border-radius:6px;overflow:hidden;background:var(--wine2)}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(.85) invert(.9) hue-rotate(160deg) contrast(.85)}
+.info dl{margin:2rem 0}
+.info dt{font-size:.85rem;color:var(--brass);margin-top:1.4rem}
+.info dd{font:300 1.5rem/1.3 var(--serif)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+@media(max-width:820px){.loc .grid{grid-template-columns:1fr}}
+
+footer.f{padding:3rem 0;border-top:1px solid rgba(243,235,223,.12);color:var(--mute);font-size:.9rem}
+footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+/* reveal */
+.r{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.r.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.r,.hero h1 span,.chapters,.hero .row{opacity:1;transform:none}.bar span::after{transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">Altrè</a>
+  <ul>
+    <li><a href="#storia">Il locale</a></li><li><a href="#menu">Menu</a></li><li><a href="#foto">Foto</a></li>
+    <li><a href="#recensioni">Recensioni</a></li><li><a href="#contatti">Dove siamo</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top">
+  <img class="bg" id="heroimg" alt="" src="https://cdn.thefork.com/tf-lab/image/upload/w_1600,c_fill,q_auto,f_auto/restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/8d728171-98ca-4c4b-88b6-11f99716d509.jpg" onerror="this.remove()">
+  <div class="wrap">
+    <h1 aria-label="Altrè"><span>Al</span><span>t</span><span>rè</span></h1>
+    <p class="chapters"><span>Caffè</span><span>Cucina</span><span>Cantina</span></p>
+    <div class="row">
+      <a class="btn solid" href="#menu">Scopri il menu</a>
+      <a class="btn" href="#contatti">Come arrivare</a>
+      <span class="addr">Via Gustavo Modena 3, Milano</span>
+    </div>
+  </div>
+</header>
+
+<section class="intro" id="storia"><div class="wrap grid">
+  <div class="r">
+    <h2>Il piacere si assapora in tre capitoli.</h2>
+    <p class="lead">Altrè è un caffè, una cucina e una cantina nello stesso indirizzo, a due passi da Porta Venezia. Mattoni a vista, sedie in pelle, luci basse e una parete di vetrine con vini e salumi. È un posto tranquillo, curato, dove i clienti dicono di sentirsi a casa.</p>
+    <p class="lead" style="margin-top:1rem">In cucina c'è la tradizione bergamasca, dai salumi di selvaggina ai formaggi della Val Brembana, accanto al pesce fresco e a una carta dei vini ampia. Il proprietario è spesso in sala e segue ogni tavolo.</p>
+    <div class="stats">
+      <div><b>9,4</b><small>su TheFork</small></div>
+      <div><b>582</b><small>recensioni</small></div>
+      <div><b>38 €</b><small>prezzo medio</small></div>
+    </div>
+    <div class="tags"><span>Cucina italiana</span><span>Enoteca</span><span>Piatti vegetariani</span><span>Romantico</span><span>Cani ammessi</span></div>
+  </div>
+  <div class="photo r"><img alt="Interno di Altrè con tavolo rotondo, bicchieri e vetrine di vini e salumi" loading="lazy" src="https://cdn.thefork.com/tf-lab/image/upload/w_900,c_fill,q_auto,f_auto/restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/9cf214c7-ed95-4f8e-8db6-8d246557d9c4.jpg" onerror="this.remove()"></div>
+</div></section>
+
+<section class="menu" id="menu"><div class="wrap">
+  <h2 class="r">Dalla cucina</h2>
+  <p class="lead r">Una cucina che parte dal territorio e arriva al mare. Qui trovi una selezione dei piatti; il menu completo cambia con le stagioni.</p>
+  <div class="menu-grid" style="margin-top:2rem">
+    <div>
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-p="a">Antipasti</button>
+        <button role="tab" aria-selected="false" data-p="d">Degustazione</button>
+        <button role="tab" aria-selected="false" data-p="c">Dai nostri ospiti</button>
+      </div>
+      <div class="panel on" id="a">
+        <div class="dish"><h3>Selezione di salumi bergamaschi con ricottina di bufala e gnocco fritto</h3><i></i><b>19 €</b></div>
+        <div class="dish"><h3>Salumi di selvaggina (cervo, cinghiale, daino) con lardo di patanegra e gnocco fritto</h3><i></i><b>25 €</b></div>
+        <div class="dish"><h3>Selezione di formaggi della Val Brembana con miele e composta di mirtillo</h3><i></i><b>22 €</b></div>
+      </div>
+      <div class="panel" id="d">
+        <div class="dish"><h3>Menù degustazione</h3><i></i><b>40 € a persona</b></div>
+        <p class="note">Il menù degustazione è un percorso a prezzo fisso. Chiedi in sala la composizione del giorno.</p>
+      </div>
+      <div class="panel" id="c">
+        <ul class="cited">
+          <li>Risotto con coda di rospo</li><li>Tataki di tonno</li><li>Spaghetti alle vongole veraci</li>
+          <li>Polpo con crema di ceci</li><li>Gamberoni lardellati</li><li>Mozzarella con cuore di gorgonzola</li><li>Gelato artigianale al caramello salato</li>
+        </ul>
+        <p class="note">I piatti più citati nelle recensioni dei clienti.</p>
+      </div>
+      <p class="note">Prezzi indicativi. Per allergie o intolleranze, avvisa il personale.</p>
+    </div>
+    <div class="menu-photos r">
+      <div><img alt="Spaghetti al pomodoro con ricotta e pistacchi" loading="lazy" src="https://cdn.thefork.com/tf-lab/image/upload/w_700,c_fill,q_auto,f_auto/restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/0f6978b1-3c18-4dd9-ba92-d64b63fbee4e.jpg" onerror="this.remove()"></div>
+      <div><img alt="Polpo grigliato su salsa cremosa" loading="lazy" src="https://cdn.thefork.com/tf-lab/image/upload/w_700,c_fill,q_auto,f_auto/restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/6c630fc9-ea3a-4328-89fc-309dffb2c2ec.jpg" onerror="this.remove()"></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="foto" style="padding-left:0;padding-right:0">
+  <div class="wrap gal-head r"><h2 style="margin:0">Uno sguardo dentro</h2><p class="lead">Scorri e tocca una foto per ingrandirla.</p></div>
+  <div class="rail" id="rail"></div>
+</section>
+
+<section class="rev" id="recensioni"><div class="wrap">
+  <div class="score" id="score">
+    <div class="big r">9,4<small> / 10</small></div>
+    <div class="bars">
+      <div class="bar"><em style="font-style:normal">Cibo</em><span style="--v:93%"></span><b>9,3</b></div>
+      <div class="bar"><em style="font-style:normal">Servizio</em><span style="--v:95%"></span><b>9,5</b></div>
+      <div class="bar"><em style="font-style:normal">Atmosfera</em><span style="--v:94%"></span><b>9,4</b></div>
+    </div>
+    <p class="lead">582 recensioni di clienti che hanno prenotato con TheFork. Altrè è al n. 93 tra i migliori ristoranti di Milano.</p>
+  </div>
+  <div class="quotes">
+    <article class="q r"><p>Una bellissima scoperta culinaria. Ambiente moderno ed elegante, servizio attento e molto accogliente.</p><footer><span>Manuela T.</span><b>10</b></footer></article>
+    <article class="q r"><p>Mi sono sentita a casa: qualità della materia prima, vini eccezionali, servizio impeccabile.</p><footer><span>Trixi V.</span><b>10</b></footer></article>
+    <article class="q r"><p>Spaghetti alle vongole deliziosi, polpo con crema di ceci e un gelato artigianale strepitoso.</p><footer><span>Merinù G.</span><b>10</b></footer></article>
+    <article class="q r"><p>Siamo tornati per la quinta volta. Tutti i piatti ottimi come sempre.</p><footer><span>Lorella A.</span><b>10</b></footer></article>
+    <article class="q r"><p>Altrè, una certezza di cucina bergamasca.</p><footer><span>Marcello P.</span><b>9,0</b></footer></article>
+    <article class="q r"><p>Sono stato qui per il mio anniversario. Cibo ottimo, servizio eccellente, camerieri simpaticissimi.</p><footer><span>Luca I.</span><b>10</b></footer></article>
+  </div>
+  <p class="ai r">In sintesi, i clienti descrivono un'atmosfera intima e raffinata, perfetta per una cena romantica, con una cucina di altissimo livello e uno staff accogliente e attento.</p>
+</div></section>
+
+<section class="loc" id="contatti"><div class="wrap grid">
+  <div class="info r">
+    <h2>Dove siamo</h2>
+    <dl>
+      <dt>Indirizzo</dt><dd>Via Gustavo Modena 3<br>20129 Milano</dd>
+      <dt>Come arrivare</dt><dd>Passante ferroviario Milano Porta Venezia</dd>
+      <dt>Cucina</dt><dd>Italiana, con piatti vegetariani</dd>
+    </dl>
+    <div class="cta">
+      <a class="btn solid" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Via+Gustavo+Modena+3+20129+Milano">Indicazioni stradali</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.thefork.it/ristorante/altre-r840382">Altrè su TheFork</a>
+    </div>
+  </div>
+  <div class="map r"><iframe title="Mappa di Altrè" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via+Gustavo+Modena+3+20129+Milano&output=embed"></iframe></div>
+</div></section>
+
+<footer class="f"><div class="wrap"><span>© 2026 Altrè · Via Gustavo Modena 3, Milano</span><span>Caffè · Cucina · Cantina</span></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="Foto ingrandita"><img alt=""></div>
+
+<script>
+const B='https://cdn.thefork.com/tf-lab/image/upload/';
+const R='restaurant/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/', C='customer/d1ba6d5d-0acb-4dae-9ae4-30ee637f1991/';
+const photos=[
+ [R+'0fec47d8-9750-4f79-91b7-2bf11ce40f73','Frittura di pesce croccante'],
+ [R+'8d728171-98ca-4c4b-88b6-11f99716d509','La sala con pareti in mattoni'],
+ [C+'2b7e2184-2074-4067-9478-440502516028','Polpo grigliato su purè di verdure'],
+ [R+'9cf214c7-ed95-4f8e-8db6-8d246557d9c4','Vetrine con vini e salumi'],
+ [C+'cf10ea49-a5bd-4bc4-ade8-76601819358e','Bistecca cotta a puntino'],
+ [R+'40675b6c-96fd-4d71-86f2-b0d3fe3a1448','Altrè'],
+ [C+'1ac75b5c-d542-4868-8807-e73032756746','Salumi assortiti'],
+ [R+'0a373ae9-f269-4482-93f2-07f3184be5f6','Altrè'],
+ [C+'3fdf9e77-be4e-4be1-8a77-6c241f4068cf','Pasta ripiena con zucchine e pancetta'],
+ [R+'78b66739-c5a1-4cac-b19d-cd3aa33978ed','Altrè'],
+ [R+'6c630fc9-ea3a-4328-89fc-309dffb2c2ec','Polpo grigliato'],
+ [R+'b77913d9-0da3-4d93-8af2-4c088e77803b','Altrè']
+];
+const rail=document.getElementById('rail'),lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+photos.forEach(([p,a])=>{
+  const b=document.createElement('button');b.setAttribute('aria-label','Ingrandisci: '+a);
+  b.innerHTML=`<img loading="lazy" alt="${a}" src="${B}w_800,c_fill,q_auto,f_auto/${p}.jpg">`;
+  b.querySelector('img').onerror=()=>b.remove();
+  b.onclick=()=>{lbi.src=`${B}w_1800,c_limit,q_auto,f_auto/${p}.jpg`;lbi.alt=a;lb.classList.add('on')};
+  rail.appendChild(b);
+});
+lb.onclick=()=>lb.classList.remove('on');
+addEventListener('keydown',e=>e.key==='Escape'&&lb.classList.remove('on'));
+
+// tabs
+document.querySelectorAll('.tabs button').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===t));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===t.dataset.p));
+});
+
+// nav + parallax
+const nav=document.getElementById('nav'),hi=document.getElementById('heroimg');
+let tick=false;
+addEventListener('scroll',()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{
+  const y=scrollY;nav.classList.toggle('s',y>40);
+  if(hi&&y<innerHeight&&!matchMedia('(prefers-reduced-motion:reduce)').matches)hi.style.transform=`translateY(${y*.18}px)`;
+  tick=false})},{passive:true});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.r,#score').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+</script>
+</body>
+</html>
