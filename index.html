@@ -65,6 +65,31 @@ nav ul a:hover{opacity:1}
 .chapters{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;margin:2rem 0 2.2rem;font:italic 300 clamp(1.3rem,3vw,2rem) var(--serif);color:var(--brass);opacity:0;animation:up 1.2s .5s var(--ease) forwards}
 .hero .row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;opacity:0;animation:up 1.2s .7s var(--ease) forwards}
 .hero .addr{color:var(--mute);font-size:.95rem;margin-left:.5rem}
+
+/* Modifica specifica mobile per i pulsanti hero */
+@media(max-width:760px) {
+  .hero .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero .row .btn {
+    width: 100%;
+    text-align: center;
+  }
+  /* Sposta "Come arrivare" sotto a "Scopri il menu" su mobile */
+  .hero .row .btn.solid {
+    order: 1;
+  }
+  .hero .row .btn:not(.solid) {
+    order: 2;
+  }
+  .hero .row .addr {
+    order: 3;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
 @keyframes up{to{opacity:1;transform:none}}
 
 /* intro */
@@ -119,6 +144,15 @@ nav ul a:hover{opacity:1}
 .rail button:nth-child(even){margin-top:3rem;aspect-ratio:4/5}
 .rail img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
 .rail button:hover img{transform:scale(1.06)}
+
+/* Rotazione dell'ottava foto in verticale */
+.rail button:nth-child(8) img {
+  transform: rotate(90deg) scale(1.35);
+}
+.rail button:nth-child(8):hover img {
+  transform: rotate(90deg) scale(1.42);
+}
+
 .lb{position:fixed;inset:0;z-index:100;background:rgba(20,6,12,.94);display:none;place-items:center;padding:4vw;cursor:zoom-out}
 .lb.on{display:grid;animation:fade .4s}
 .lb img{max-height:88vh;border-radius:4px}
@@ -361,7 +395,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
   <div class="allergens-box">
     <h4 data-i18n="all-title">Allergeni</h4>
     <p data-i18n="all-desc">Gentile ospite, se avessi delle allergie e/o intolleranze alimentari, chiedi al nostro personale che provvederà a fornirti adeguate informazioni sui nostri cibi e bevande.<br><em>* In mancanza di reperimento del prodotto fresco, l'alimento potrebbe essere surgelato / abbattuto.</em></p>
-    <div class="allergens-grid">
+    <div class="allergens-grid" data-i18n-allergens>
       <div>1. Glutine</div>
       <div>2. Crostacei</div>
       <div>3. Uova e derivati</div>
@@ -460,7 +494,7 @@ footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1re
 <div class="lb" id="lb" role="dialog" aria-label="Foto ingrandita"><img alt=""></div>
 
 <script>
-// --- DATI DINAMICI (Punteggi e Recensioni aggiornabili automaticamente) ---
+// --- DATI DINAMICI ---
 const ratingsData = {
   thefork: "9,4/10",
   google: "4,8/5",
@@ -567,6 +601,23 @@ const translations = {
     "ssp1": "Polpo alla griglia con purea di patate", "ssp2": "Pescato del giorno: orata intera alla griglia", "ssp3": "Tataky di tonno", "ssp4": "Fritto misto di pesce",
     "all-title": "Allergeni",
     "all-desc": "Gentile ospite, se avessi delle allergie e/o intolleranze alimentari, chiedi al nostro personale che provvederà a fornirti adeguate informazioni sui nostri cibi e bevande.<br><em>* In mancanza di reperimento del prodotto fresco, l'alimento potrebbe essere surgelato / abbattuto.</em>",
+    "allergens-html": `
+      <div>1. Glutine</div>
+      <div>2. Crostacei</div>
+      <div>3. Uova e derivati</div>
+      <div>4. Pesce</div>
+      <div>5. Arachidi e derivati</div>
+      <div>6. Soia</div>
+      <div>7. Latte e derivati</div>
+      <div>8. Frutta a guscio</div>
+      <div>9. Sedano</div>
+      <div>10. Senape</div>
+      <div>11. Sesamo</div>
+      <div>12. Solfiti</div>
+      <div>13. Lupini</div>
+      <div>14. Molluschi</div>
+      <div>V. Vegetariano</div>
+    `,
     "orari-title": "Orari & Informazioni",
     "orari-subtitle": "APERTO PER PRANZO E CENA DA LUNEDI A SABATO",
     "orari-p1": "Il locale è aperto da lunedì a giovedì: dalle ore 7.00 alle ore 20.00<br>venerdì e sabato dalle ore 19.00 alle ore 23.00",
@@ -695,6 +746,23 @@ const translations = {
     "ssp1": "Grilled octopus with potato puree", "ssp2": "Catch of the day: whole grilled sea bream", "ssp3": "Tuna tataki", "ssp4": "Mixed fried fish",
     "all-title": "Allergens",
     "all-desc": "Dear guest, if you have any food allergies and/or intolerances, please ask our staff who will provide you with adequate information about our food and beverages.<br><em>* If fresh product is unavailable, the food may be frozen/blast-chilled.</em>",
+    "allergens-html": `
+      <div>1. Gluten</div>
+      <div>2. Crustaceans</div>
+      <div>3. Eggs and derivatives</div>
+      <div>4. Fish</div>
+      <div>5. Peanuts and derivatives</div>
+      <div>6. Soy</div>
+      <div>7. Milk and derivatives</div>
+      <div>8. Tree nuts</div>
+      <div>9. Celery</div>
+      <div>10. Mustard</div>
+      <div>11. Sesame</div>
+      <div>12. Sulfites</div>
+      <div>13. Lupins</div>
+      <div>14. Molluscs</div>
+      <div>V. Vegetarian</div>
+    `,
     "orari-title": "Hours & Information",
     "orari-subtitle": "OPEN FOR LUNCH AND DINNER FROM MONDAY TO SATURDAY",
     "orari-p1": "The venue is open from Monday to Thursday: from 7.00 AM to 8.00 PM<br>Friday and Saturday from 7.00 PM to 11.00 PM",
@@ -741,6 +809,11 @@ function setLang(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
+
+  const allergensGrid = document.querySelector('[data-i18n-allergens]');
+  if (allergensGrid && translations[lang]["allergens-html"]) {
+    allergensGrid.innerHTML = translations[lang]["allergens-html"];
+  }
 
   document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
   if(lang === 'it') {
